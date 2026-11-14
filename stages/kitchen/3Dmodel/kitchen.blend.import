@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://12t3n11kgtw3"
-path="res://.godot/imported/kitchen.blend-a2c3dfdf66e88a765c58ebcb93b8c1a5.scn"
+valid=false
 
 [deps]
 
 source_file="res://stages/kitchen/3Dmodel/kitchen.blend"
-dest_files=["res://.godot/imported/kitchen.blend-a2c3dfdf66e88a765c58ebcb93b8c1a5.scn"]
 
 [params]
 

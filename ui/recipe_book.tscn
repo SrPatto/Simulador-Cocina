@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://byb0xpr4weoh3"]
+
+[ext_resource type="Script" uid="uid://dxx3qq02euojj" path="res://ui/recipe_book.gd" id="1_03wkm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ohyrq"]
+
+[node name="RecipeBook" type="Node3D" unique_id=1955648148]
+script = ExtResource("1_03wkm")
+
+[node name="BookMesh" type="MeshInstance3D" parent="." unique_id=529462987]
+
+[node name="PageQuad" type="MeshInstance3D" parent="." unique_id=643258087]
+mesh = SubResource("QuadMesh_ohyrq")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2099590387]
+
+[node name="Page" type="Control" parent="SubViewport" unique_id=830635956]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NextButton" type="Button" parent="." unique_id=61655375]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="PreviousButton" type="Button" parent="." unique_id=765460433]
+offset_right = 8.0
+offset_bottom = 8.0

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://hraqpidpmkyh"]
+
+[ext_resource type="Script" uid="uid://c2lk7gcn55ns7" path="res://stations/CuttingBoard/cutting_board.gd" id="1_fy0lb"]
+[ext_resource type="ArrayMesh" uid="uid://d4ycugidxo46" path="res://assets/obj/cuttingboard.obj" id="1_h8c2k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ohyrq"]
+size = Vector3(1.5, 0.15, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q05tu"]
+size = Vector3(1.5, 0.5, 1)
+
+[node name="CuttingBoard" type="Node3D" unique_id=847207031]
+script = ExtResource("1_fy0lb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1429403575]
+mesh = ExtResource("1_h8c2k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=963478761]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=712916254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 0.07571411, 0)
+shape = SubResource("BoxShape3D_ohyrq")
+
+[node name="PlacementArea" type="Area3D" parent="." unique_id=1615141319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlacementArea" unique_id=1652122032]
+shape = SubResource("BoxShape3D_q05tu")
+
+[node name="SlotOrigin" type="Marker3D" parent="." unique_id=2072005587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)

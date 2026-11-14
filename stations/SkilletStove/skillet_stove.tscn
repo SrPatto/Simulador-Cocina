@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://lbldl2w21miv"]
+
+[ext_resource type="Script" uid="uid://dc3y5qwnvhorb" path="res://stations/SkilletStove/skillet_stove.gd" id="1_nh6wy"]
+[ext_resource type="ArrayMesh" uid="uid://nwkpp4hqwkrv" path="res://assets/obj/stove_single_countertop.obj" id="1_qo6lb"]
+[ext_resource type="ArrayMesh" uid="uid://d1vaufx63htyw" path="res://assets/obj/pan_B.obj" id="2_nh6wy"]
+[ext_resource type="Script" uid="uid://c8gx2wc7hsxf5" path="res://addons/godot-xr-tools/interactables/interactable_hinge.gd" id="4_rnclw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ohyrq"]
+size = Vector3(1, 0.2, 1)
+
+[node name="SkilletStove" type="Node3D" unique_id=1847307770]
+script = ExtResource("1_nh6wy")
+
+[node name="StoveMesh" type="MeshInstance3D" parent="." unique_id=2145877599]
+mesh = ExtResource("1_qo6lb")
+
+[node name="CookingArea" type="Area3D" parent="." unique_id=1902961935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CookingArea" unique_id=1811415749]
+mesh = ExtResource("2_nh6wy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookingArea" unique_id=627679973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_ohyrq")
+
+[node name="Flames" type="GPUParticles3D" parent="." unique_id=1728636089]
+
+[node name="FireLight" type="OmniLight3D" parent="." unique_id=277375194]
+
+[node name="HeatGauge" type="MeshInstance3D" parent="." unique_id=88966928]
+
+[node name="HeatControl" type="Node3D" parent="." unique_id=6989099]
+script = ExtResource("4_rnclw")
+metadata/_custom_type_script = "uid://c8gx2wc7hsxf5"

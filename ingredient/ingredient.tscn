@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://pftijlrghwdm"]
+
+[ext_resource type="Script" uid="uid://c8iw2l3o8edei" path="res://ingredient/ingredient.gd" id="1_ifhc5"]
+[ext_resource type="ArrayMesh" uid="uid://cw4ky5er4pjkn" path="res://assets/obj/food_ingredient_steak.obj" id="2_ym7d4"]
+
+[node name="Ingredient" type="RigidBody3D" unique_id=1959074865]
+script = ExtResource("1_ifhc5")
+metadata/_custom_type_script = "uid://bfrlpbsqg5lqr"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=281358446]
+mesh = ExtResource("2_ym7d4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2087203862]

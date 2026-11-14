@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b2f011rwhwdmr"]
+
+[ext_resource type="Script" uid="uid://d3nm8oncohhiq" path="res://stations/StirringPot/stirring_pot.gd" id="1_3e1qa"]
+[ext_resource type="ArrayMesh" uid="uid://dsrjoalcj6cmq" path="res://assets/obj/pot_B.obj" id="1_uoek6"]
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="2_3e1qa"]
+[ext_resource type="ArrayMesh" uid="uid://q8l3gt343tvx" path="res://assets/obj/pillar_A.obj" id="3_tjymb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ohyrq"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pedrc"]
+
+[node name="StirringPot" type="Node3D" unique_id=560262875 node_paths=PackedStringArray("spoon_tip")]
+script = ExtResource("1_3e1qa")
+spoon_tip = NodePath("Spoon/Tip")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=240472398]
+mesh = ExtResource("1_uoek6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1183981377]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=695410997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_ohyrq")
+
+[node name="IngredientArea" type="Area3D" parent="." unique_id=31840577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IngredientArea" unique_id=1837933120]
+shape = SubResource("BoxShape3D_pedrc")
+
+[node name="OutputMarker" type="Marker3D" parent="." unique_id=1441427868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="Spoon" type="RigidBody3D" parent="." unique_id=926277363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.1, 0.2)
+script = ExtResource("2_3e1qa")
+metadata/_custom_type_script = "uid://bfrlpbsqg5lqr"
+
+[node name="Tip" type="Marker3D" parent="Spoon" unique_id=1346799823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spoon" unique_id=415578075]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = ExtResource("3_tjymb")
